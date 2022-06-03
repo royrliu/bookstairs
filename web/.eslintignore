@@ -1,0 +1,4 @@
+build
+public
+*.d.ts
+vite.config.ts
