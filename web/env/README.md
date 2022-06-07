@@ -15,4 +15,4 @@ Then, you should modify `vite-env.d.ts` for adding this newly added config optio
 
 You can access this config option now by using `import.meta.env.OPTION_NAME` variable. But this could be too long to use,
 and we may switch to another build tools. So we defined all the config options in `config/build-config.ts`.
-Remember to add your config option here, and `import { BuildConfig } from './config/build-config';` to use it elsewhere.
+Remember to add your config option here, and `import { BuildConfig } from '@/config/build-config';` to use it elsewhere.

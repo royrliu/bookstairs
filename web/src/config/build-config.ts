@@ -1,7 +1,3 @@
-export interface BuildConfig {
-  apiHost: string;
-}
+export interface BuildConfig {}
 
-export const BuildConfig: BuildConfig = {
-  apiHost: import.meta.env.BK_API_HOST,
-};
+export const BuildConfig: BuildConfig = {};

@@ -2,3 +2,4 @@ build
 public
 *.d.ts
 vite.config.ts
+jest.config.ts

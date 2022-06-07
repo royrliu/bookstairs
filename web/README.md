@@ -83,7 +83,6 @@ sidebar and children components.
 
 [React Router 6](https://reactrouter.com/docs/en/v6) is the router library we used in this project. We put all the
 routed pages in this directory by following the [Next.js](https://nextjs.org/docs/routing/introduction) routing style.
-This feature is implemented by the [vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages).
 
 You can use all the router feature out of box
 and [nested router](https://reactrouter.com/docs/en/v6/getting-started/tutorial#nested-routes)
