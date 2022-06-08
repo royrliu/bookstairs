@@ -1,22 +1,19 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-const sourceRoot: string = resolve(__dirname, 'src');
+// Translate relative path into absolute path.
+const resolvePath = (path: string) => resolve(__dirname, path);
 
 // The format for this config file can be learnt from https://vitejs.dev/config/.
 export default defineConfig({
   // Expose the build configuration to vite, remember to set both envPrefix and envDir.
   envPrefix: 'BK_',
-  envDir: resolve(__dirname, 'env'),
-  root: sourceRoot,
-  resolve: {
-    alias: {
-      '@': sourceRoot,
-    },
-  },
-  publicDir: resolve(__dirname, 'public'),
-  plugins: [react()],
+  envDir: resolvePath('env'),
+  root: resolvePath('src'),
+  publicDir: resolvePath('public'),
+  plugins: [react(), tsconfigPaths({ root: resolvePath('.') })],
   server: {
     proxy: {
       '/api': {
