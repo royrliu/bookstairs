@@ -1,0 +1,23 @@
+## This pipeline is used for testing and building frontend application.
+name: Frontend CI
+on: [ push, pull_request ]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Use Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+      - name: Lint frontend
+        run: make lint-frontend
+      - name: Test frontend
+        run: make test-frontend
+      - name: Build frontend
+        run: make build-frontend

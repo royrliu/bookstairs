@@ -1,0 +1,62 @@
+# This is a configuration file for goreleaser.
+# Make sure to check the documentation at https://goreleaser.com
+
+project_name: bookstairs
+
+before:
+  hooks:
+    - go mod tidy
+    - go generate ./...
+
+builds:
+  - id: bookstairs
+    ldflags:
+      - -s -w
+      - -X github.com/bookstairs/bookstairs/config.gitMajor={{ .Major }}
+      - -X github.com/bookstairs/bookstairs/config.gitMinor={{ .Minor }}
+      - -X github.com/bookstairs/bookstairs/config.gitVersion={{ .Version }}
+      - -X github.com/bookstairs/bookstairs/config.gitCommit={{ .Commit }}
+      - -X github.com/bookstairs/bookstairs/config.gitTreeState=clean
+      - -X github.com/bookstairs/bookstairs/config.buildDate={{ .Date }}
+    env:
+      # Disable cgo, that mean some library couldn't be used, such as mattn/go-sqlite3.
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - '386'
+      - amd64
+      - arm64
+    ignore:
+      - goos: darwin
+        goarch: '386'
+      - goos: linux
+        goarch: '386'
+      - goos: windows
+        goarch: arm64
+
+checksum:
+  name_template: 'checksums.txt'
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - '^web:'
+
+archives:
+  - id: bookstairs
+    builds:
+      - bookstairs
+    format: tar.gz
+    wrap_in_directory: true
+    format_overrides:
+      - goos: windows
+        format: zip
+
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"

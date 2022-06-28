@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Loading } from 'asserts';
+import { BookStairsLoading } from 'asserts';
 
 export default function App() {
   return (
     <div>
-      <Loading width={300} />
+      <BookStairsLoading width={60} />
     </div>
   );
 }
