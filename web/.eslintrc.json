@@ -1,23 +1,11 @@
 {
-  "extends": [
-    "mantine",
-    "plugin:jest/recommended",
-    "prettier"
-  ],
-  "plugins": [
-    "jest"
-  ],
+  "extends": ["mantine", "prettier"],
   "rules": {
-    "jest/no-export": "off",
-    "jest/expect-expect": "off",
+    "quotes": [2, "single", "avoid-escape"],
     "import/order": [
       "error",
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal"
-        ],
+        "groups": ["builtin", "external", "internal"],
         "pathGroups": [
           {
             "pattern": "react",
@@ -25,9 +13,7 @@
             "position": "before"
           }
         ],
-        "pathGroupsExcludedImportTypes": [
-          "react"
-        ],
+        "pathGroupsExcludedImportTypes": ["react"],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",

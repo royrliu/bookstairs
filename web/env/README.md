@@ -1,4 +1,4 @@
-## What's this?
+## Vite Build Tool Environment
 
 This is an environment related build profiles. It's used by vite, replacing the `import.meta.env.XXX` at the build time.
 `.env.development` is used for local development while `.env.production` is used for production building.

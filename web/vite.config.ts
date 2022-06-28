@@ -13,11 +13,14 @@ export default defineConfig({
   envDir: resolvePath('env'),
   root: resolvePath('src'),
   publicDir: resolvePath('public'),
+  build: {
+    outDir: resolvePath('build'),
+  },
   plugins: [react(), tsconfigPaths({ root: resolvePath('.') })],
   server: {
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:9000',
+        target: 'http://127.0.0.1:8000',
         changeOrigin: true,
       },
     },

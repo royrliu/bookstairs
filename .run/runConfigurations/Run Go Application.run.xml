@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run Go Application" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="bookstairs" />
+    <working_directory value="$PROJECT_DIR$" />
+    <kind value="PACKAGE" />
+    <package value="github.com/bookstairs/bookstairs" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$/bookstairs.go" />
+    <method v="2" />
+  </configuration>
+</component>
