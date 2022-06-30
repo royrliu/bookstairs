@@ -3,7 +3,7 @@ import React, { StrictMode } from 'react';
 import App from 'App';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { BookStairsTheme } from 'styles/theme';
+import { BookStairsTheme } from 'styles';
 import 'locales';
 
 const root = createRoot(document.getElementById('root')!);

@@ -7,7 +7,9 @@
     "epub",
     "epub-reader",
     "library",
-    "self-hosted"
+    "self-hosted",
+    "bookstairs",
+    "BookStairs"
   ],
   "homepage": "https://bookstairs.net",
   "bugs": {
@@ -23,14 +25,14 @@
   "author": {
     "name": "Yufan Sheng",
     "email": "syhily@gmail.com",
-    "url": "https://yufan.me"
+    "url": "https://yufan.io"
   },
   "scripts": {
     "build": "tsc && vite build",
+    "coverage": "vitest run --coverage",
     "dev": "vite",
     "preview": "vite preview",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "test": "vitest"
   },
   "dependencies": {
     "@mantine/core": "^5.0.0-alpha.18",
@@ -42,15 +44,16 @@
     "@mantine/notifications": "^5.0.0-alpha.18",
     "@mantine/nprogress": "^5.0.0-alpha.18",
     "@mantine/spotlight": "^5.0.0-alpha.18",
-    "clsx": "^1.1.1",
-    "consola": "^2.15.3",
+    "@mantine/styles": "^5.0.0-alpha.18",
+    "@mantine/utils": "^5.0.0-alpha.18",
+    "@tabler/icons": "^1.72.0",
     "dayjs": "^1.11.3",
     "i18next": "^21.8.11",
     "i18next-browser-languagedetector": "^6.1.4",
     "immer": "^9.0.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^11.17.3",
+    "react-i18next": "^11.17.4",
     "react-router-dom": "^6.3.0",
     "use-immer": "^0.7.0"
   },
